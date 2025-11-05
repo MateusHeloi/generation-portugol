@@ -1,44 +1,18 @@
 const readline = require('readline-sync');
 
-/**
- * Classe Stack (Pilha) simples baseada em Array para simular a estrutura de dados.
- */
 class Stack {
     constructor() {
         this.items = [];
     }
-
-    /**
-     * Adiciona um elemento ao topo da pilha (push).
-     * @param {string} element O nome do livro a ser adicionado.
-     */
     push(element) {
         this.items.push(element);
     }
-
-    /**
-     * Remove o elemento do topo da pilha (pop).
-     * @returns {string | undefined} O elemento removido ou undefined se a pilha estiver vazia.
-     */
     pop() {
-        if (this.isEmpty()) {
-            return undefined;
-        }
         return this.items.pop();
     }
-
-    /**
-     * Verifica se a pilha está vazia.
-     * @returns {boolean} True se a pilha estiver vazia, false caso contrário.
-     */
     isEmpty() {
         return this.items.length === 0;
     }
-
-    /**
-     * Retorna a lista de todos os elementos na pilha.
-     * @returns {string[]} A lista de livros.
-     */
     list() {
         return this.items;
     }
@@ -102,8 +76,4 @@ function mainPilha() {
     }
 }
 
-// Para rodar o programa diretamente
-// mainPilha();
-
-// Exporta a classe e a função principal para testes ou uso modular
-module.exports = { Stack, mainPilha };
+mainPilha();

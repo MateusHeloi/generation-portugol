@@ -1,44 +1,18 @@
 const readline = require('readline-sync');
 
-/**
- * Classe Queue (Fila) simples baseada em Array para simular a estrutura de dados.
- */
 class Queue {
     constructor() {
         this.items = [];
     }
-
-    /**
-     * Adiciona um elemento ao final da fila (enqueue).
-     * @param {string} element O nome do cliente a ser adicionado.
-     */
     enqueue(element) {
         this.items.push(element);
     }
-
-    /**
-     * Remove o elemento do início da fila (dequeue).
-     * @returns {string | undefined} O elemento removido ou undefined se a fila estiver vazia.
-     */
     dequeue() {
-        if (this.isEmpty()) {
-            return undefined;
-        }
         return this.items.shift();
     }
-
-    /**
-     * Verifica se a fila está vazia.
-     * @returns {boolean} True se a fila estiver vazia, false caso contrário.
-     */
     isEmpty() {
         return this.items.length === 0;
     }
-
-    /**
-     * Retorna a lista de todos os elementos na fila.
-     * @returns {string[]} A lista de clientes.
-     */
     list() {
         return this.items;
     }
@@ -102,8 +76,4 @@ function mainFila() {
     }
 }
 
-// Para rodar o programa diretamente
-// mainFila();
-
-// Exporta a classe e a função principal para testes ou uso modular
-module.exports = { Queue, mainFila };
+mainFila();
